@@ -1,6 +1,6 @@
 # Status Codes
 
-This page lists all status codes encountered on the DMOJ and their description. It should be noted that it is possible for a test case to be given multiple status codes (indeed, this is usually the case for non-AC verdicts), in which case the one with the highest priority will be displayed. This page lists status codes in order of increasing priority.
+This page lists all status codes encountered on the VNOJ and their description. It should be noted that it is possible for a test case to be given multiple status codes (indeed, this is usually the case for non-AC verdicts), in which case the one with the highest priority will be displayed. This page lists status codes in order of increasing priority.
 
 ## AC - Accepted
 Your program passed testing! In some cases, this may be accompanied with additional feedback from the grader.
@@ -12,7 +12,7 @@ Your program did not crash while executing, but the output it produced was wrong
 Your program returned with a nonzero exit code (if you're not using a native language like C++, it crashed). For languages like Python or Java, this will typically be accompanied with the name of the exception your program threw, e.g., `NameError` or `java.lang.NullPointerException`, respectively.
 
 ## RTE - Runtime Exception
-Your program caused a runtime exception to occur. This will only occur for native languages like C or C++. DMOJ maps many common RTEs to more useful descriptions, described below.
+Your program caused a runtime exception to occur. This will only occur for native languages like C or C++. VNOJ maps many common RTEs to more useful descriptions, described below.
 
 | Feedback | Description |
 |----------|-------------|

@@ -2,7 +2,7 @@
 
 A problem with many possible outputs (e.g. not a single possible answer, with score based on accuracy) may benefit from the `checker` field in the `init.yml` file. A checker is a Python script that is executed per-case post-execution — it grades the output of a process but does not interact with it.
 
-The DMOJ judge already defines several checkers.
+The VNOJ judge already defines several checkers.
 These checkers are specified as follows:
 ```yaml
 checker:

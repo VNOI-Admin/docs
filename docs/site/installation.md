@@ -10,7 +10,7 @@ $ npm install -g sass postcss-cli postcss autoprefixer
 
 ## Creating the database
 
-Next, we will set up the database using MariaDB. The DMOJ is only tested to work with MySQL, and it is unlikely to work with anything else. Please visit [the MariaDB site](https://downloads.mariadb.org/mariadb/repositories/) and follow the download instructions.
+Next, we will set up the database using MariaDB. The VNOJ is only tested to work with MySQL, and it is unlikely to work with anything else. Please visit [the MariaDB site](https://downloads.mariadb.org/mariadb/repositories/) and follow the download instructions.
 
 When asked, you should select the latest MariaDB version.
 
@@ -32,13 +32,13 @@ mariadb> exit
 
 ## Installing prerequisites
 
-Now that you are done, you can start installing the site. First, create a virtual environment and activate it. Here, we'll create a virtual environment named `dmojsite`.
+Now that you are done, you can start installing the site. First, create a virtual environment and activate it. Here, we'll create a virtual environment named `vnojsite`.
 
 ```shell-session
-$ python3 -m venv dmojsite
-$ . dmojsite/bin/activate
+$ python3 -m venv vnojsite
+$ . vnojsite/bin/activate
 ```
-You should see `(dmojsite)` prepended to your shell. Henceforth, `(dmojsite)` commands assumes you are in the code directory, with virtual environment active.
+You should see `(vnojsite)` prepended to your shell. Henceforth, `(vnojsite)` commands assumes you are in the code directory, with virtual environment active.
 
 ?> The virtual environment will help keep the modules needed separate from the system package manager, and save you many headaches when updating. Read more about virtual environments [here](https://docs.python.org/3/tutorial/venv.html).
 
@@ -46,18 +46,18 @@ You should see `(dmojsite)` prepended to your shell. Henceforth, `(dmojsite)` co
 Now, fetch the site source code. If you plan to install a judge [from PyPI](https://pypi.org/project/dmoj/), check out a matching version of the site repository. For example, for judge v2.1.0:
 
 ```shell-session
-(dmojsite) $ git clone https://github.com/VNOI-Admin/OJ.git
-(dmojsite) $ cd site
-(dmojsite) $ git checkout v2.1.0  # only if planning to install a judge from PyPI, otherwise skip this step
-(dmojsite) $ git submodule init
-(dmojsite) $ git submodule update
+(vnojsite) $ git clone https://github.com/VNOI-Admin/OJ.git
+(vnojsite) $ cd site
+(vnojsite) $ git checkout v2.1.0  # only if planning to install a judge from PyPI, otherwise skip this step
+(vnojsite) $ git submodule init
+(vnojsite) $ git submodule update
 ```
 
 Install Python dependencies into the virtual environment.
 
 ```shell-session
-(dmojsite) $ pip3 install -r requirements.txt
-(dmojsite) $ pip3 install mysqlclient
+(vnojsite) $ pip3 install -r requirements.txt
+(vnojsite) $ pip3 install mysqlclient
 ```
 
 You will now need to configure `dmoj/local_settings.py`. You should make a copy [of this sample settings file](https://github.com/VNOI-Admin/docs/blob/master/sample_files/local_settings.py) and read through it, making changes as necessary. Most importantly, you will want to update MariaDB credentials.
@@ -68,42 +68,42 @@ You will now need to configure `dmoj/local_settings.py`. You should make a copy 
 Now, you should verify that everything is going according to plan.
 
 ```shell-session
-(dmojsite) $ python3 manage.py check
+(vnojsite) $ python3 manage.py check
 ```
 
 ## Compiling assets
-DMOJ uses `sass` and `autoprefixer` to generate the site stylesheets. DMOJ comes with a `make_style.sh` script that may be ran to compile and optimize the stylesheets.
+VNOJ uses `sass` and `autoprefixer` to generate the site stylesheets. VNOJ comes with a `make_style.sh` script that may be ran to compile and optimize the stylesheets.
 
 ```shell-session
-(dmojsite) $ ./make_style.sh
+(vnojsite) $ ./make_style.sh
 ```
 
 Now, collect static files into `STATIC_ROOT` as specified in `dmoj/local_settings.py`.
 
 ```shell-session
-(dmojsite) $ python3 manage.py collectstatic
+(vnojsite) $ python3 manage.py collectstatic
 ```
 
 You will also need to generate internationalization files.
 
 ```shell-session
-(dmojsite) $ python3 manage.py compilemessages
-(dmojsite) $ python3 manage.py compilejsi18n
+(vnojsite) $ python3 manage.py compilemessages
+(vnojsite) $ python3 manage.py compilejsi18n
 ```
 
 ## Setting up database tables
 We must generate the schema for the database, since it is currently empty.
 
 ```shell-session
-(dmojsite) $ python3 manage.py migrate
+(vnojsite) $ python3 manage.py migrate
 ```
 
 Next, load some initial data so that your install is not entirely blank.
 
 ```shell-session
-(dmojsite) $ python3 manage.py loaddata navbar
-(dmojsite) $ python3 manage.py loaddata language_small
-(dmojsite) $ python3 manage.py loaddata demo
+(vnojsite) $ python3 manage.py loaddata navbar
+(vnojsite) $ python3 manage.py loaddata language_small
+(vnojsite) $ python3 manage.py loaddata demo
 ```
 
 !>  Keep in mind that the `demo` fixture creates a superuser account with a username and password of `admin`. If your
@@ -112,11 +112,11 @@ Next, load some initial data so that your install is not entirely blank.
 You should create an admin account with which to log in initially.
 
 ```shell-session
-(dmojsite) $ python3 manage.py createsuperuser
+(vnojsite) $ python3 manage.py createsuperuser
 ```
 
 ## Setting up Celery
-The DMOJ uses Celery workers to perform most of its heavy lifting, such as batch rescoring submissions. We will use Redis as its broker, though note that other brokers that Celery supports will work as well.
+The VNOJ uses Celery workers to perform most of its heavy lifting, such as batch rescoring submissions. We will use Redis as its broker, though note that other brokers that Celery supports will work as well.
 
 Start up the Redis server, which is needed by the Celery workers.
 ```shell-session
@@ -131,7 +131,7 @@ We will test that Celery works soon.
 At this point, you should attempt to run the server, and see if it all works.
 
 ```shell-session
-(dmojsite) $ python3 manage.py runserver 0.0.0.0:8000
+(vnojsite) $ python3 manage.py runserver 0.0.0.0:8000
 ```
 
 You should Ctrl-C to exit after verifying.
@@ -142,7 +142,7 @@ You should Ctrl-C to exit after verifying.
 You should also test to see if `bridged` runs.
 
 ```shell-session
-(dmojsite) $ python3 manage.py runbridged
+(vnojsite) $ python3 manage.py runbridged
 ```
 
 If there are no errors after about 10 seconds, it probably works.
@@ -150,7 +150,7 @@ You should Ctrl-C to exit.
 
 Next, test that the Celery workers run.
 ```shell-session
-(dmojsite) $ celery -A dmoj_celery worker
+(vnojsite) $ celery -A vnoj_celery worker
 ```
 You can Ctrl-C to exit.
 
@@ -164,13 +164,13 @@ First, copy our `uwsgi.ini` ([link](https://github.com/VNOI-Admin/docs/blob/mast
 You need to install `uwsgi`.
 
 ```shell-session
-(dmojsite) $ pip3 install uwsgi
+(vnojsite) $ pip3 install uwsgi
 ```
 
 To test, run:
 
 ```shell-session
-(dmojsite) $ uwsgi --ini uwsgi.ini
+(vnojsite) $ uwsgi --ini uwsgi.ini
 ```
 
 If it says workers are spawned, it probably works.
@@ -229,7 +229,7 @@ Create `config.js`. This assumes you use `nginx`, or there be dragons.
 You may need to shuffle ports if they are already used.
 
 ```shell-session
-(dmojsite) $ cat > websocket/config.js
+(vnojsite) $ cat > websocket/config.js
 module.exports = {
     get_host: '127.0.0.1',
     get_port: 15100,
@@ -250,8 +250,8 @@ You need to uncomment the relevant section in the `nginx` configuration.
 Need to install the dependencies.
 
 ```shell-session
-(dmojsite) $ npm install qu ws simplesets
-(dmojsite) $ pip3 install websocket-client
+(vnojsite) $ npm install qu ws simplesets
+(vnojsite) $ pip3 install websocket-client
 ```
 
 Now copy `wsevent.conf` ([link](https://github.com/VNOI-Admin/docs/blob/master/sample_files/wsevent.conf)) to `/etc/supervisor/conf.d/wsevent.conf`, changing paths, and then update supervisor and nginx.

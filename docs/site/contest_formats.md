@@ -1,6 +1,6 @@
 # Contest Formats
 
-The DMOJ ships with 6 contest formats by default: Default, IOI, Codechef IOI Ranklist (henceforth shortened to simply Legacy IOI), ECOO, AtCoder, and ICPC.
+The VNOJ ships with 6 contest formats by default: Default, IOI, Codechef IOI Ranklist (henceforth shortened to simply Legacy IOI), ECOO, AtCoder, and ICPC.
 
 ## Default Contest Format
 
@@ -40,8 +40,8 @@ The `first_ac_bonus` field, as suggested by the name, will add the specified num
 This field defaults to 10.
 
 The `time_bonus` field awards a bonus for solving problems faster.
-The field is in minutes, and for each such interval of time before the contest ends, any submission with a non-zero score will have a bonus added. This field defaults to 5.  
-Note that specifying 0 will disable this bonus.  
+The field is in minutes, and for each such interval of time before the contest ends, any submission with a non-zero score will have a bonus added. This field defaults to 5.
+Note that specifying 0 will disable this bonus.
 For example, say a submission with a score of 50/100 is submitted 23 minutes before the contest ends. $\left\lfloor\frac{23}{5}\right\rfloor = 4$, so 4 bonus points are awarded, giving a total score of $50 + 4 = 54$ for that problem.
 
 ## AtCoder Contest Format
@@ -57,8 +57,8 @@ The penalty is equal to the total number of incorrect submissions prior to the h
 
 The `ICPC` contest format is based on the contest format used by the ICPC.
 
-The score is equal to the number of problems solved, and ties are broken firstly based on the sum of the elapsed time that a correct submission was submitted to each problem plus the penalty and secondly based on the time of the last score-changing submission. 
+The score is equal to the number of problems solved, and ties are broken firstly based on the sum of the elapsed time that a correct submission was submitted to each problem plus the penalty and secondly based on the time of the last score-changing submission.
 
 The penalty is specified by the `penalty` field, and defaults to 20 minutes.
-The penalty is equal to the number of incorrect submissions prior to the first correct submission, multiplied by the specified value, in minutes, and is added to the cumulative time. 
+The penalty is equal to the number of incorrect submissions prior to the first correct submission, multiplied by the specified value, in minutes, and is added to the cumulative time.
 Note that the time penalty is applied to all problems with a non-zero score (this format will not automatically disable partial points).

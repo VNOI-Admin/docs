@@ -1,6 +1,6 @@
 # Permission System
 
-The DMOJ's permission system is very extensive and allows fine-tuning a user's permissions. Here, we will document which permissions are required to perform certain tasks on the site. Any undocumented models means that they follow Django's default permission system of (`can_add_<model>`, `can_change_<model>`, `can_delete_<model>`, and `can_view_<model>`).
+The VNOJ's permission system is very extensive and allows fine-tuning a user's permissions. Here, we will document which permissions are required to perform certain tasks on the site. Any undocumented models means that they follow Django's default permission system of (`can_add_<model>`, `can_change_<model>`, `can_delete_<model>`, and `can_view_<model>`).
 
 ## Blog Posts
 Blog posts follow Django's default permission system.
@@ -45,7 +45,7 @@ The user can edit rating-related fields on the contest admin page, and rate the 
 The user can edit the `access_code` field on the contest admin page.
 
 #### `create_private_contest` (Create private contests)
-The user can create organization-private and user-private contests. The user can also edit the `is_visible` field 
+The user can create organization-private and user-private contests. The user can also edit the `is_visible` field
 on the contest admin page as long as the contest is organization-private or user-private.
 
 #### `change_contest_visibility` (Change contest visibility)
@@ -112,20 +112,20 @@ Problem solutions follow Django's default permission system.
 The user can see all problem solutions for problems they can access, regardless of if the solution is public or not.
 
 ## Profile
-Profiles follow Django's default permission system.    
+Profiles follow Django's default permission system.
 
 #### `totp` (Edit TOTP settings)
 The user can see and edit TOTP-related fields, such as a user's TOTP key.
 
 ## Submissions
 
-Submission visibility and editability are determined by problem permissions. 
+Submission visibility and editability are determined by problem permissions.
 If the user can edit the problem, they can also edit related submissions.
 No user can add submissions, and deleting permissions follow Django's default permission system.
 
 
 #### `abort_any_submission` (Abort any submission)
-The user can abort any submission. Without this permission, the user can only abort 
+The user can abort any submission. Without this permission, the user can only abort
 submissions that they have submitted and which have not been rejudged.
 
 #### `rejudge_submission` (Rejudge the submission)

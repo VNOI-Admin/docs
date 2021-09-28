@@ -58,7 +58,7 @@ test_cases:
 
 ```
 
-As DMOJ's YAML dialect supports dynamic keys, large `init.yml`s can be programmatically generated.
+As VNOJ's YAML dialect supports dynamic keys, large `init.yml`s can be programmatically generated.
 See the sample files for examples.
 
 ## Specifying Cases with Regexes
