@@ -24,7 +24,7 @@ Your program caused a runtime exception to occur. This will only occur for nativ
 | `std::bad_alloc` | `new` failed to allocate enough memory. |
 | `failed initializing` | Your program uses too much data defined in global scope for it to fit inside the memory constraints at startup. A typical example is code like `int arr[10000][10000]` on a problem with a 64mb memory limit — the aforementioned array will take 381mb, far above the allowed limit. |
 
-[file a ticket]: https://github.com/DMOJ/judge/issues
+[file a ticket]: https://github.com/VNOI-Admin/judge-server/issues
 
 ## OLE - Output Limit Exceeded
 Your program outputted too much data to `stdout`, typically over 256mb (though some problems may have custom — generally larger — constraints).

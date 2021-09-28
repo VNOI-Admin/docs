@@ -53,7 +53,7 @@ connecting it to the site. It expects problems to be placed on the host under
 `/mnt/problems/judge.yml`.
 
 ```shell-session
-$ git clone --recursive https://github.com/DMOJ/judge.git
+$ git clone --recursive https://github.com/VNOI-Admin/judge-server.git
 $ cd judge/.docker
 $ make judge-tier1
 $ docker run \
@@ -114,7 +114,7 @@ runtime:
 You should now be able to run `dmoj-cli -c judge.yml` to enter a CLI
 environment for the judge. For additional configuration options, an [example
 configuration
-file](https://github.com/DMOJ/docs/blob/master/sample_files/judge_conf.yml) is
+file](https://github.com/VNOI-Admin/docs/blob/master/sample_files/judge_conf.yml) is
 provided.
 
 You should now be able to connect the judge to the site.

@@ -1,6 +1,6 @@
-## DMOJ: Modern Online Judge
+## VNOJ: Modern Online Judge
 
-This documentation aims to guide you through installing your own DMOJ instance.
+This documentation aims to guide you through installing your own VNOJ instance.
 
-Feel free to reach out to us on [Slack](https://slack.dmoj.ca) if you have any
+Feel free to reach out to us on [Discord](https://discord.gg/TDyYVyd) if you have any
 questions.

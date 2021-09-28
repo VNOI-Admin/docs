@@ -1,7 +1,8 @@
 # Judge Configuration
+
 The DMOJ judge is configured with a YAML file, which contains the runtimes, problems folders, and other information.
 
-A sample configuration file is available [here](https://github.com/DMOJ/docs/blob/master/sample_files/judge_conf.yml).
+A sample configuration file is available [here](https://github.com/VNOI-Admin/docs/blob/master/sample_files/judge_conf.yml).
 
 ## Runtimes
 

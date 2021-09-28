@@ -1,4 +1,7 @@
-# DMOJ Documentation
-Documentation for the [DMOJ judge](https://github.com/DMOJ/judge) system.
+# VNOJ Documentation
 
-Access at [https://docs.dmoj.ca](https://docs.dmoj.ca)
+Documentation for the [VNOJ](https://github.com/VNOI-Admin/OJ) system.
+
+VNOJ is based on [DMOJ](https://github.com/DMOJ/online-judge) and serves as the official online judge of [VNOI](https://vnoi.info/).
+
+Access the documentation at [https://vnoi-admin.github.io/docs](https://vnoi-admin.github.io/docs)
