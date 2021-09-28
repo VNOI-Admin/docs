@@ -114,7 +114,7 @@ runtime:
 You should now be able to run `dmoj-cli -c judge.yml` to enter a CLI
 environment for the judge. For additional configuration options, an [example
 configuration
-file](https://github.com/VNOI-Admin/docs/blob/master/sample_files/judge_conf.yml) is
+file](https://github.com/VNOI-Admin/vnoj-docs/blob/master/sample_files/judge_conf.yml) is
 provided.
 
 You should now be able to connect the judge to the site.
