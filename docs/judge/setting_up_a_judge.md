@@ -88,6 +88,8 @@ $ docker run \
 
 ### Through PyPI
 
+!> Not available for VNOJ
+
 #### Installing the prerequisites
 
 ```shell-session
