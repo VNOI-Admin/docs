@@ -17,7 +17,7 @@ DEBUG = True  # Change to False once you are done with runserver testing.
 
 # Uncomment and set to the domain names this site is intended to serve.
 # You must do this once you set DEBUG to False.
-#ALLOWED_HOSTS = ['dmoj.ca']
+#ALLOWED_HOSTS = ['oj.vnoi.info']
 
 # Optional apps that DMOJ can make use of.
 INSTALLED_APPS += (
@@ -34,7 +34,7 @@ CACHES = {
 # Your database credentials. Only MySQL is supported by DMOJ.
 # Documentation: <https://docs.djangoproject.com/en/1.11/ref/databases/>
 DATABASES = {
-     'default': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'dmoj',
         'USER': 'dmoj',
@@ -53,8 +53,8 @@ DATABASES = {
 
 # Internationalization.
 # Documentation: <https://docs.djangoproject.com/en/1.11/topics/i18n/>
-LANGUAGE_CODE = 'en-ca'
-DEFAULT_USER_TIME_ZONE = 'America/Toronto'
+LANGUAGE_CODE = 'vi'
+DEFAULT_USER_TIME_ZONE = 'Asia/Ho_Chi_Minh'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
@@ -110,7 +110,7 @@ ADMINS = (
 )
 
 # The sender for the aforementioned emails.
-SERVER_EMAIL = 'DMOJ: Modern Online Judge <errors@dmoj.ca>'
+SERVER_EMAIL = 'VNOJ: VNOI Online Judge <vnoj@vnoi.info>'
 
 
 ##################################################
@@ -135,10 +135,22 @@ STATIC_ROOT = '/tmp/static'
 ############################################
 
 ## DMOJ site display settings.
-SITE_NAME = 'DMOJ'
-SITE_LONG_NAME = 'DMOJ: Modern Online Judge'
+SITE_NAME = 'VNOJ'
+SITE_FULL_URL = 'https://oj.vnoi.info'
+SITE_LONG_NAME = 'VNOJ: VNOI Online Judge'
 SITE_ADMIN_EMAIL = 'admin@example.com'
-TERMS_OF_SERVICE_URL = '//dmoj.ca/tos' # Use a flatpage.
+TERMS_OF_SERVICE_URL = '//oj.vnoi.info/tos' # Use a flatpage.
+
+## Media files settings.
+# This is the directory where all the media files are stored.
+# Change this to somewhere more permanent.
+# You must configure your webserver to serve this directory in production.
+MEDIA_ROOT = '/tmp/media'
+
+## Problem data settings.
+# This is the directory where all the problem data are stored.
+# Change this to somewhere more permanent.
+DMOJ_PROBLEM_DATA_ROOT = '/tmp/problem_data/'
 
 ## Bridge controls.
 # The judge connection address and port; where the judges will connect to the site.
@@ -151,7 +163,7 @@ BRIDGED_JUDGE_ADDRESS = [('localhost', 9999)]
 
 ## DMOJ features.
 # Set to True to enable full-text searching for problems.
-ENABLE_FTS = True
+ENABLE_FTS = False
 
 # Set of email providers to ban when a user registers, e.g., {'throwawaymail.com'}.
 BAD_MAIL_PROVIDERS = set()
