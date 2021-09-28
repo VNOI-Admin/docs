@@ -1,5 +1,7 @@
 # LaTeX Diagrams with Texoid
 
+!> Untested on VNOJ
+
 The DMOJ platform is capable of rendering LaTeX documents onto problem statements. This can be useful for things like drawing graphs
 with ease, porting over PDF resources, and so on. An example of this functionality live can be seen [here](https://dmoj.ca/problem/ds4),
 [here](https://dmoj.ca/problem/ccoqr16p3), and [here](https://dmoj.ca/problem/ccoqr16p1).

@@ -1,5 +1,7 @@
 # About
 
+!> Untested on VNOJ
+
 The DMOJ supports a simple JSON API for accessing most data used by the backend. Currently, there are two versions.
 
  - [API v2](#dmoj-api-v2) - A more rich API that returns user-specific data. This version fully utilizes API tokens.

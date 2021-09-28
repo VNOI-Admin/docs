@@ -1,5 +1,7 @@
 # SSL Proxying for User Content
 
+!> Untested on VNOJ
+
 User-generated content (e.g., comments) poses a threat to site security, and can cause mixed-content warnings. If your site is served over HTTPS, this may be suboptimal - routing user content through a secure server can help.
 
 The DMOJ site provides support for this through the [Github Camo](https://github.com/atmos/camo) project, which requires CoffeeScript to be installed (`apt install coffeescript`).

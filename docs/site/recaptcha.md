@@ -1,5 +1,7 @@
 # Installing reCAPTCHA Spam Registration Prevention
 
+!> Untested on VNOJ
+
 If you run DMOJ for any prolonged period of time, eventually spambots will begin registering in large numbers.
 
 DMOJ can integrate with reCAPTCHA to filter out spam registrations with a little setup.
@@ -16,7 +18,7 @@ In `local_settings.py`, set `RECAPTCHA_PUBLIC_KEY` to the site key, and `RECAPTC
 First, install `django-recaptcha2` in the site virtual environment.
 
 ```shell-session
-(dmojsite) $ pip3 install django-recaptcha2
+(vnojsite) $ pip3 install django-recaptcha2
 ```
 
 Finally, open `local_settings.py` in your editor of choice, and add `snowpenguin.django.recaptcha2` to the end of`INSTALLED_APPS`.
