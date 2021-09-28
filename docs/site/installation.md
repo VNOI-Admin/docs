@@ -150,7 +150,7 @@ You should Ctrl-C to exit.
 
 Next, test that the Celery workers run.
 ```shell-session
-(vnojsite) $ celery -A vnoj_celery worker
+(vnojsite) $ celery -A dmoj_celery worker
 ```
 You can Ctrl-C to exit.
 
