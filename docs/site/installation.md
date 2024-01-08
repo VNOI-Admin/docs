@@ -61,7 +61,7 @@ Install Node.js packages:
 (vnojsite) $ npm install
 ```
 
-You will now need to configure `dmoj/local_settings.py`. You should make a copy of [this sample settings file](https://github.com/DMOJ/docs/blob/master/sample_files/local_settings.py) and read through it, making changes as necessary. Most importantly, you will want to update MariaDB credentials.
+You will now need to configure `dmoj/local_settings.py`. You should make a copy of [this sample settings file](https://github.com/VNOI-Admin/vnoj-docs/blob/master/sample_files/local_settings.py) and read through it, making changes as necessary. Most importantly, you will want to update MariaDB credentials.
 
 ?> Leave debug mode on for now; we'll disable it later after we've verified that the site works. <br> <br>
 Generally, it's recommended that you add your settings in `dmoj/local_settings.py` rather than modifying `dmoj/settings.py` directly. `settings.py` will automatically read `local_settings.py` and load it, so write your configuration there.
@@ -87,6 +87,20 @@ You will also need to generate internationalization files.
 (vnojsite) $ ./manage.py compilejsi18n
 ```
 
+## Setting up Celery
+
+The VNOJ uses Celery workers to perform most of its heavy lifting, such as batch rescoring submissions. We will use Redis as its broker, though note that other brokers that Celery supports will work as well.
+
+Start up the Redis server, which is needed by the Celery workers.
+
+```shell-session
+$ service redis-server start
+```
+
+Configure `local_settings.py` by uncommenting `CELERY_BROKER_URL` and `CELERY_RESULT_BACKEND`. By default, Redis listens on localhost port 6379, which is reflected in `local_settings.py`. You will need to update the addresses if you changed Redis's settings.
+
+We will test that Celery works soon.
+
 ## Setting up database tables
 
 We must generate the schema for the database, since it is currently empty.
@@ -111,20 +125,6 @@ You should create an admin account with which to log in initially.
 ```shell-session
 (vnojsite) $ ./manage.py createsuperuser
 ```
-
-## Setting up Celery
-
-The VNOJ uses Celery workers to perform most of its heavy lifting, such as batch rescoring submissions. We will use Redis as its broker, though note that other brokers that Celery supports will work as well.
-
-Start up the Redis server, which is needed by the Celery workers.
-
-```shell-session
-$ service redis-server start
-```
-
-Configure `local_settings.py` by uncommenting `CELERY_BROKER_URL` and `CELERY_RESULT_BACKEND`. By default, Redis listens on localhost port 6379, which is reflected in `local_settings.py`. You will need to update the addresses if you changed Redis's settings.
-
-We will test that Celery works soon.
 
 ## Running the server
 
