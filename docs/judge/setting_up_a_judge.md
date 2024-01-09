@@ -38,6 +38,8 @@ may give you more control at the expense of more administrative complexity.
 
 ### With Docker
 
+#### Pre-built
+
 We maintain Docker images with all runtimes we support in the
 [runtimes-docker](https://github.com/DMOJ/runtimes-docker) project.
 
@@ -49,6 +51,9 @@ and tested every week to contain the latest runtime versions.
 
 ?> VNOJ uses a custom tier, `tiervnoj`, which contains all the runtimes in Tier 1
 and some additional ones. You can find the list of supported runtimes [here](https://oj.vnoi.info/runtimes).
+The Docker image is maintained at [vnoj/judge-tiervnoj](https://hub.docker.com/r/vnoj/judge-tiervnoj).
+
+#### From source
 
 The session below build a `judge-tiervnoj`:
 
@@ -61,6 +66,10 @@ $ make judge-tiervnoj
 The session below spawns a `tiervnoj` judge image in the same server as the site server.
 **It expects problems to be placed on the host under `/mnt/problems`, and judge-specific
 configuration to be in `/mnt/problems/judge.yml`.**
+
+?> For first time developers: Both the judge and site can share a common problems folder,
+which is specified at `DMOJ_PROBLEM_DATA_ROOT` in `settings.py` for the site and as below
+for the judge.
 
 Your `judge.yml` file should look something like below:
 
