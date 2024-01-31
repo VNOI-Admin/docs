@@ -17,8 +17,6 @@ For example:
 - `/mnt/problems/folder2/**/` will match all subfolders of `/mnt/problems/folder2`, e.g. `/mnt/problems/folder2/foo/bar/problem2`.
 - `/mnt/problems/folder3/year20[0-9][0-9]` will match `/mnt/problems/folder3/year2023`.
 
-
-
 ## ID
 
 The judge's display name is configured with an `id` node. This is a string, and it should match the one on the site interface.
