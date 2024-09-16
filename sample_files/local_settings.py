@@ -106,11 +106,11 @@ STATICFILES_FINDERS += ('compressor.finders.CompressorFinder',)
 # A tuple of (name, email) pairs that specifies those who will be mailed
 # when the server experiences an error when DEBUG = False.
 ADMINS = (
-    ('Your Name', 'your.email@example.com'),
+    ('Pham Tan Khac', 'your.email@example.com'),
 )
 
 # The sender for the aforementioned emails.
-SERVER_EMAIL = 'VNOJ: VNOI Online Judge <vnoj@vnoi.info>'
+SERVER_EMAIL = 'cktoj@gmail.com'
 
 
 ################################################
@@ -136,11 +136,11 @@ STATIC_ROOT = '/tmp/static'
 ############################################
 
 ## DMOJ site display settings.
-SITE_NAME = 'VNOJ'
+SITE_NAME = 'CKTOJ'
 SITE_FULL_URL = 'https://oj.vnoi.info'
-SITE_LONG_NAME = 'VNOJ: VNOI Online Judge'
+SITE_LONG_NAME = 'CKTOJ: THPT Chuyen Nguyen Tat Thanh Kon Tum Online Judge'
 SITE_ADMIN_EMAIL = 'admin@example.com'
-TERMS_OF_SERVICE_URL = '//oj.vnoi.info/tos/'  # Use a flatpage.
+TERMS_OF_SERVICE_URL = '//localhost/tos/'  # Use a flatpage.
 
 ## Media files settings.
 # This is the directory where all the media files are stored.
