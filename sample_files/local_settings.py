@@ -92,7 +92,7 @@ STATICFILES_FINDERS += ('compressor.finders.CompressorFinder',)
 
 # To use Mailgun, uncomment this block.
 # You will need to run `pip install django-mailgun-mime` to get `MailgunBackend`.
-#EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
+#EMAIL_BACKEND = 'django_mailgun_mime.backends.MailgunMIMEBackend'
 #MAILGUN_API_KEY = '<your Mailgun access key>'
 #MAILGUN_DOMAIN_NAME = '<your Mailgun domain>'
 
