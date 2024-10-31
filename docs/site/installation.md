@@ -34,18 +34,18 @@ mariadb> exit
 Now that you are done, you can start installing the site. First, create a virtual environment and activate it. Here, we'll create a virtual environment named `vnojsite`.
 
 ```shell-session
-$ python3 -m venv vnojsite
-$ . vnojsite/bin/activate
+$ python3 -m venv chtojsite
+$ . chtojsite/bin/activate
 ```
 
-You should see `(vnojsite)` prepended to your shell. Henceforth, `(vnojsite)` commands assume you are in the code directory, with the virtual environment active.
+You should see `(chtojsite)` prepended to your shell. Henceforth, `(chtojsite)` commands assume you are in the code directory, with the virtual environment active.
 
 ?> The virtual environment will help keep the modules needed separate from the system package manager, and save you many headaches when updating. Read more about virtual environments [here](https://docs.python.org/3/tutorial/venv.html).
 
 Now, fetch the site source code:
 
 ```shell-session
-(vnojsite) $ git clone --recursive https://github.com/VNOI-Admin/OJ.git site
+(vnojsite) $ git clone --recursive https://github.com/CHT-OJ/oj.git site
 (vnojsite) $ cd site
 ```
 
