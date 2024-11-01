@@ -1,6 +1,6 @@
 # Status codes
 
-This page lists all status codes encountered on the VNOJ and their description. It should be noted that it is possible for a test case to be given multiple status codes (indeed, this is usually the case for non-AC verdicts), in which case the one with the highest priority will be displayed. This page lists status codes in order of increasing priority.
+This page lists all status codes encountered on the CHT and their description. It should be noted that it is possible for a test case to be given multiple status codes (indeed, this is usually the case for non-AC verdicts), in which case the one with the highest priority will be displayed. This page lists status codes in order of increasing priority.
 
 ## AC - Accepted
 
@@ -16,7 +16,7 @@ Your program returned with a nonzero exit code (if you're not using a native lan
 
 ## RTE - Runtime Error
 
-Your program caused a runtime error to occur. This will only occur for native languages like C or C++. VNOJ maps many common RTEs to more useful descriptions, described below.
+Your program caused a runtime error to occur. This will only occur for native languages like C or C++. CHT maps many common RTEs to more useful descriptions, described below.
 
 | Feedback | Description |
 |----------|-------------|
